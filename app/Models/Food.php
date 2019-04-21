@@ -11,7 +11,6 @@ use Illuminate\Support\Collection;
  *
  * @package App\Models
  *
- * @property mixed         id
  * @property User user
  */
 class Food extends Model

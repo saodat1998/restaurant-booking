@@ -11,6 +11,22 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [
+    'as'   => 'index',
+    'uses' => 'DashboardController@index',
+]);
+
+// Orders
+Route::group([
+    'prefix'     => 'order',
+    'as'         => 'order.',
+    ], function () {
+    Route::get('/', [
+        'as'   => 'index',
+        'uses' => 'OrderController@index',
+    ]);
+    Route::get('/create', [
+        'as'   => 'order.store',
+        'uses' => 'OrderController@store',
+    ]);
 });
